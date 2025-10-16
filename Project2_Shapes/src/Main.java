@@ -1,8 +1,21 @@
+
+
 public class Main {
     public static void main(String[] args) {
-        Circle c = new Circle("Circle1", 5);
-        c.draw();
-        c.move();
-        c.resize(1.5);
+        // إنشاء كائن من الدائرة
+        Circle circle = new Circle("Red", 0, 0, 5);
+
+      
+        circle.draw();
+
+
+        // تحريك الدائرة
+        circle.move(2, 3);
+
+
+
+        // طباعة المساحات
+        System.out.println("Circle area: " + circle.area());
+
     }
 }
