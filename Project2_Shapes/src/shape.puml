@@ -1,0 +1,39 @@
+@startuml
+package project {
+    abstract class Shape {
+        - color: String
+        - x: double
+        - y: double
+        + draw(): void
+        + area(): double
+    }
+
+    class Circle {
+        - radius: double
+        + area(): double
+        + draw(): void
+        + draw(scale: double): void
+    }
+
+    class Point {
+        + area(): double
+        + toString(): String
+    }
+
+    interface Movable {
+        + move(dx: double, dy: double): void
+    }
+
+    interface Adjustable {
+        + resize(factor: double): void
+    }
+
+    Circle --|> Shape
+    Point --|> Shape
+
+    Circle ..|> Movable : implements
+    Point ..|> Movable : implements
+
+    Circle ..|> Adjustable : implements
+}
+@enduml
